@@ -8,17 +8,21 @@ module d_latch_tb;
   initial begin
     $dumpfile("d_latch_df.vcd");
     $dumpvars(0,d_latch_tb);
-    $monitor("time=%d\t reset=%b \ten=%b\t d=%b\t q=%b",$time,reset,en,d,q);
-#10 reset = 0; en = 0; d = 0;
-#10 reset = 0; en = 0; d = 1;
-#10 reset = 0; en = 1; d = 0;
-#10 reset = 0; en = 1; d = 1;
-#10 reset = 1; en = 0; d = 0;
-#10 reset = 1; en = 0; d = 1;
-#10 reset = 1; en = 1; d = 0;
-#10 reset = 1; en = 1; d = 1;
+    $monitor("time=%d \t reset=%b \t en=%b\t d=%b \t q=%b",$t ime,reset,en,d,q);
+    #10 reset = 0; en = 0; d = 0;
+    #10 reset = 0; en = 0; d = 1;
+    #10 reset = 0; en = 1; d = 0;
+    #10 reset = 0; en = 1; d = 1;
+    #10 reset = 1; en = 0; d = 0;
+    #10 reset = 1; en = 0; d = 1;
+    #10 reset = 1; en = 1; d = 0;
+    #10 reset = 1; en = 1; d = 1;
 
     #20 $finish ;
   end
 endmodule
+    
+
+
+
     
